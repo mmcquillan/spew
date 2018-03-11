@@ -11,6 +11,12 @@ func main() {
 	// init
 	fmt.Println("Spewing...")
 
+	// input
+	spewPre := "spew"
+	if len(os.Args) > 1 {
+		spewPre = os.Args[1]
+	}
+
 	// settings
 	spewOut := "spew"
 	if os.Getenv("SPEW_OUT") != "" {
@@ -27,7 +33,7 @@ func main() {
 
 	// loop
 	for {
-		fmt.Println(time.Now().Format(time.RFC3339) + " " + spewOut)
+		fmt.Println(time.Now().Format(time.RFC3339) + " [" + spewPre + "] " + spewOut)
 		time.Sleep(spewTimespan)
 	}
 

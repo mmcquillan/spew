@@ -1,8 +1,0 @@
-# Spew
-
-This program just spews out logs to standard out.
-
-```
-SPEW_OUT - What you want the log to say
-SPEW_INTERVAL - The frequency with which to send logs (default: 5s)
-```
