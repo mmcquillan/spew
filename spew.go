@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -15,6 +16,13 @@ func main() {
 	spewPre := "spew"
 	if len(os.Args) > 1 {
 		spewPre = os.Args[1]
+	}
+
+	// force fail
+	if os.Getenv("SPEW_FAIL") != "" {
+		if strings.ToUpper(os.Getenv("SPEW_FAIL")) == "TRUE" {
+			os.Exit(1)
+		}
 	}
 
 	// settings
