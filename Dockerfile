@@ -1,4 +1,4 @@
-FROM golang:1.10.0-alpine3.7
+FROM golang:1.19.1-alpine3.15
 WORKDIR /go/src/spew
 COPY spew.go .
 ENV GOBIN=/go/bin

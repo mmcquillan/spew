@@ -12,6 +12,13 @@ func main() {
 	// init
 	fmt.Println("Spewing...")
 
+	// output vars
+	if os.Getenv("SPEW_ENV") != "" {
+		for _, env := range os.Environ() {
+			fmt.Println(" ==> " + env)
+		}
+	}
+
 	// input
 	spewPre := "spew"
 	if len(os.Args) > 1 {
